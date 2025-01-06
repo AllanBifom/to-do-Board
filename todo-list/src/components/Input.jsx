@@ -20,7 +20,7 @@ function Input({taskList,setTaskList}) {
 
             <button
             onClick={addTask}
-            className='bg-violet-400 text-white py-2 px-4 rounded'
+            className='bg-violet-400 text-white py-2 px-4 rounded-lg font-semibold hover:opacity-70'
             >
                 Add
             </button>
