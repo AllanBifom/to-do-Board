@@ -1,10 +1,21 @@
 import React from 'react'
 
-function Board({task}) {
+function Board({task, index, taskList, setTaskList}) {
+    const handleDelete = () => {
+        let removeIndex = taskList.indexOf(task);
+        taskList.splice(removeIndex, 1);
+        setTaskList((currTask => currTask.filter(todo => index === removeIndex)));
+    }
     return (
     <>
-    <div className='max-w-xl flex flex-col items-center justify-center border'>
+    <div className='max-w-xl rounded-xl flex flex-col items-center justify-start border text-center text-lg pt-2 pb-4 px-4 md:px-6'>
         <p>{task}</p>
+        <button
+        className='bg-red-600 text-white rounded-lg py-1 px-2 mt-4'
+        onClick={handleDelete}
+        >
+            Delete
+        </button>
     </div>
     </>
     )
